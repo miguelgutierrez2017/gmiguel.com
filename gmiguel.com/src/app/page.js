@@ -1,4 +1,5 @@
 import Header from "@/components/header";
+import Bio from "@/components/bio";
 
 // This is my personal website, built with Next.js and Tailwind CSS.
 // It showcases my projects, skills, and experience as a dev ops engineer.
@@ -8,12 +9,7 @@ export default function Home() {
 
       <Header />
       <main className="p-4">
-        <section id="about" className="mb-8">
-          <h2 className="text-xl font-bold mb-4">About Me</h2>
-          <p>
-            I am a DevOps engineer with a passion for automating processes and improving system reliability. I have experience with various tools and technologies, including Docker, Kubernetes, and AWS.
-          </p>
-        </section>
+        <Bio />
 
         <section id="skills" className="mb-8">
           <h2 className="text-xl font-bold mb-4">Skills</h2>
