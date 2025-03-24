@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Header from "@/components/header";
 
 // This is my personal website, built with Next.js and Tailwind CSS.
 // It showcases my projects, skills, and experience as a dev ops engineer.
@@ -6,14 +6,7 @@ export default function Home() {
   return (
     <div className=''>
 
-      <header className="flex items-center justify-between p-4 bg-gray-800 text-white">
-        <h1 className="text-2xl font-bold">Miguel Gutierrez</h1>
-        <nav className="space-x-4">
-          <a href="#about" className="hover:underline">About</a>
-          <a href="#projects" className="hover:underline">Projects</a>
-          <a href="#contact" className="hover:underline">Contact</a>
-        </nav>
-      </header>
+      <Header />
       <main className="p-4">
         <section id="about" className="mb-8">
           <h2 className="text-xl font-bold mb-4">About Me</h2>
