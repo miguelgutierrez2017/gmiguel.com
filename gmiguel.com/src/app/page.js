@@ -8,16 +8,26 @@ import Contact from "@/components/contact";
 // It showcases my projects, skills, and experience as a dev ops engineer.
 export default function Home() {
   return (
-    <div className="">
+    <div className="bg-gray-100 min-h-screen flex flex-col">
       <Header />
-      <main className="p-4">
-        <Bio />
+      <main className="p-4 space-y-16">
+        {/* Show Header and Bio at the top */}
+        <section
+          id="landing"
+          className="min-h-screen flex flex-col justify-start relative"
+        >
+          <Bio />
 
-        <Skills />
+          <Skills />
+        </section>
 
-        <Projects />
+        <section id="projects">
+          <Projects />
+        </section>
 
-        <Contact />
+        <section id="contact">
+          <Contact />
+        </section>
       </main>
     </div>
   );
