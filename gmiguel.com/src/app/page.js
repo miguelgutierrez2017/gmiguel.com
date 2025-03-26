@@ -4,8 +4,7 @@ import Skills from "@/components/skills";
 import Projects from "@/components/projects";
 import Contact from "@/components/contact";
 import { FaArrowDownLong } from "react-icons/fa6";
-// This is my personal website, built with Next.js and Tailwind CSS.
-// It showcases my projects, skills, and experience as a dev ops engineer.
+
 export default function Home() {
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col">
@@ -25,11 +24,11 @@ export default function Home() {
           </a>
         </div>
         {/* Other sections are scrollable */}
-        <section id="skills">
-          <Skills />
-        </section>
         <section id="projects">
           <Projects />
+        </section>
+        <section id="skills">
+          <Skills />
         </section>
         <section id="contact">
           <Contact />

@@ -1,34 +1,48 @@
-import { Button } from "./ui/button";
+import { Button, buttonVariants } from "./ui/button";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 export default function Header() {
   return (
     <header className="flex items-center justify-center p-4 bg-gray-100 text-white">
       <h1 className="text-2xl font-bold"></h1>
       <nav className="space-x-4">
-        <Button
+        <Link
           href="#about"
-          className="hover:bg-blue-600 shadow-lg rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer"
+          className={cn(
+            buttonVariants({ variant: "default" }),
+            "hover:bg-blue-600 shadow-lg rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer"
+          )}
         >
           Home
-        </Button>
-        <Button
+        </Link>
+        <Link
           href="#projects"
-          className="hover:bg-blue-600 shadow-lg rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer"
-        >
-          Skills
-        </Button>
-        <Button
-          href="#contact"
-          className="hover:bg-blue-600 shadow-lg rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer"
+          className={cn(
+            buttonVariants({ variant: "default" }),
+            "hover:bg-blue-600 shadow-lg rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer"
+          )}
         >
           Projects
-        </Button>
-        <Button
+        </Link>
+        <Link
+          href="#contact"
+          className={cn(
+            buttonVariants({ variant: "default" }),
+            "hover:bg-blue-600 shadow-lg rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer"
+          )}
+        >
+          Skills
+        </Link>
+        <Link
           href="#skills"
-          className="hover:bg-blue-600 shadow-lg rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer"
+          className={cn(
+            buttonVariants({ variant: "default" }),
+            "hover:bg-blue-600 shadow-lg rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer"
+          )}
         >
           Contact
-        </Button>
+        </Link>
       </nav>
     </header>
   );
