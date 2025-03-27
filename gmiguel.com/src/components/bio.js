@@ -17,12 +17,7 @@ export default function Bio() {
           </a>
         </h3>
         <div className="text-center">
-          <p>
-            I am a dedicated IT System Analyst with a passion for technology and
-            problem-solving. With over 10 years of experience in technical and
-            customer support, I thrive on challenges and enjoy finding
-            innovative solutions.
-          </p>
+          <p>Bay Area IT profesional</p>
         </div>
       </div>
     </section>
