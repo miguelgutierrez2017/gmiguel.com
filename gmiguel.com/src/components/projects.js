@@ -1,7 +1,12 @@
+"use client"; // Add this directive at the top
+
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import { useTheme } from "next-themes";
 
 export default function Projects() {
+  const { resolvedTheme } = useTheme(); // Get the current theme
+
   return (
     <section id="projects" className="mb-16">
       <h2 className="text-3xl font-bold mb-8 text-center">Projects</h2>
@@ -57,7 +62,9 @@ export default function Projects() {
           </Badge>
           {/* Add an image below the text */}
           <img
-            src="portfolio.png"
+            src={
+              resolvedTheme === "dark" ? "darkportfolio.png" : "portfolio.png"
+            } // Dynamically switch image
             alt="Project Two Screenshot"
             className="rounded-b-lg shadow-md mt-4"
           />
