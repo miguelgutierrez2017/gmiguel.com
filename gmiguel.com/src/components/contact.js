@@ -11,7 +11,7 @@ export default function Contact() {
           className="text-blue-500 hover:underline"
         >
           <MdEmail className="inline mr-1" />
-          miguel@example.com
+          miguelgut.a3@gmail.com
         </a>
       </p>
 

@@ -11,16 +11,17 @@ export default function Bio() {
           Hello! I&apos;m Miguel Gutierrez
         </h2>
         <h3 className="text-xl font-semibold mb-2">
-          DevOps Engineer &nbsp;|&nbsp;
+          IT System Analyst &nbsp;|&nbsp;
           <a href="/Resume.pdf" target="_blank" className="text-blue-600">
             Resume
           </a>
         </h3>
         <div className="text-center">
           <p>
-            I am a DevOps engineer with a passion for automating processes and
-            improving system reliability. I have experience with various tools
-            and technologies, including Docker, Kubernetes, and AWS.
+            I am a dedicated IT System Analyst with a passion for technology and
+            problem-solving. With over 10 years of experience in technical and
+            customer support, I thrive on challenges and enjoy finding
+            innovative solutions.
           </p>
         </div>
       </div>

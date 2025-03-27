@@ -1,10 +1,11 @@
 import { Button, buttonVariants } from "./ui/button";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { ModeToggle } from "./darkmode";
 
 export default function Header() {
   return (
-    <header className="flex items-center justify-center p-4 bg-gray-100 text-white">
+    <header className="flex items-center justify-center p-4 bg-secondary text-red-500 dark:text-blue-500">
       <h1 className="text-2xl font-bold"></h1>
       <nav className="space-x-4">
         <Link
@@ -43,6 +44,7 @@ export default function Header() {
         >
           Contact
         </Link>
+        <ModeToggle />
       </nav>
     </header>
   );
