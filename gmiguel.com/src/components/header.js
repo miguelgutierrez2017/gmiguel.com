@@ -1,51 +1,24 @@
-import { Button, buttonVariants } from "./ui/button";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
+"use client"; // Add this directive at the top
+
 import { ModeToggle } from "./darkmode";
+import Dice from "./dice"; // Import the Dice component
+import Navigation from "./navbuttons.js"; // Import the Navigation component
 
 export default function Header() {
   return (
-    <header className="flex items-center justify-center p-4 bg-secondary text-red-500 dark:text-blue-500">
-      <h1 className="text-2xl font-bold"></h1>
-      <nav className="space-x-4">
-        <Link
-          href="#about"
-          className={cn(
-            buttonVariants({ variant: "default" }),
-            "hover:bg-blue-600 shadow-lg rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer"
-          )}
-        >
-          Home
-        </Link>
-        <Link
-          href="#projects"
-          className={cn(
-            buttonVariants({ variant: "default" }),
-            "hover:bg-blue-600 shadow-lg rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer"
-          )}
-        >
-          Projects
-        </Link>
-        <Link
-          href="#contact"
-          className={cn(
-            buttonVariants({ variant: "default" }),
-            "hover:bg-blue-600 shadow-lg rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer"
-          )}
-        >
-          Skills
-        </Link>
-        <Link
-          href="#skills"
-          className={cn(
-            buttonVariants({ variant: "default" }),
-            "hover:bg-blue-600 shadow-lg rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer"
-          )}
-        >
-          Contact
-        </Link>
+    <header className="flex items-center justify-between p-4 bg-secondary text-red-500 dark:text-blue-500">
+      {/* Dice on the left */}
+      <div className="flex-shrink-0">
+        <Dice />
+      </div>
+
+      {/* Navigation in the center */}
+      <Navigation />
+
+      {/* Mode toggle on the right */}
+      <div className="flex-shrink-0">
         <ModeToggle />
-      </nav>
+      </div>
     </header>
   );
 }
