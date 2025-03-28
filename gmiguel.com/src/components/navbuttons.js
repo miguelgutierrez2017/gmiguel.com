@@ -8,15 +8,6 @@ export default function Navigation() {
   return (
     <nav className="flex-1 flex justify-center space-x-4">
       <Link
-        href="#about"
-        className={cn(
-          buttonVariants({ variant: "default" }),
-          "hover:bg-blue-600 shadow-lg rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer"
-        )}
-      >
-        Home
-      </Link>
-      <Link
         href="#projects"
         className={cn(
           buttonVariants({ variant: "default" }),
