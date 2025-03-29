@@ -17,20 +17,22 @@ export default function Home() {
         >
           <Bio />
         </section>
+
         {/* Scroll down arrow with bounce animation */}
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce">
           <a href="#projects" className="text-gray-600 hover:text-blue-600">
             <FaArrowDownLong size={30} />
           </a>
         </div>
+
         {/* Other sections are scrollable */}
-        <section id="projects">
+        <section id="projects" className="max-w-5xl mx-auto px-4">
           <Projects />
         </section>
-        <section id="skills">
+        <section id="skills" className="max-w-5xl mx-auto px-4">
           <Skills />
         </section>
-        <section id="contact">
+        <section id="contact" className="max-w-5xl mx-auto px-4">
           <Contact />
         </section>
       </main>
