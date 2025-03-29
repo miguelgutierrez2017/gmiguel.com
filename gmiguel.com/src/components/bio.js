@@ -1,6 +1,9 @@
 export default function Bio() {
   return (
-    <section id="about" className="mb-8 flex flex-col items-center">
+    <section
+      id="about"
+      className="mb-8 flex flex-col items-center opacity-0 animate-fade-in"
+    >
       <div className="flex flex-col items-center mt-4">
         <img
           src="/pfp.jpeg"

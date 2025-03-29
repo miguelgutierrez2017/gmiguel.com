@@ -3,6 +3,7 @@ import Bio from "@/components/bio";
 import Skills from "@/components/skills";
 import Projects from "@/components/projects";
 import Contact from "@/components/contact";
+import FloatingButton from "@/components/floatbutton.js"; // Import the FloatingButton component
 import { FaArrowDownLong } from "react-icons/fa6";
 
 export default function Home() {
@@ -36,6 +37,9 @@ export default function Home() {
           <Contact />
         </section>
       </main>
+
+      {/* Floating button to go back to the landing page */}
+      <FloatingButton />
     </div>
   );
 }
