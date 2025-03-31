@@ -9,13 +9,13 @@ import { FaArrowDownLong } from "react-icons/fa6";
 export default function Home() {
   return (
     <div className="bg-secondary min-h-screen flex flex-col">
-      <Header />
       <main className="p-4 space-y-16">
-        {/* Landing section with only Header and Bio */}
+        {/* Landing section with Header and Bio */}
         <section
           id="landing"
           className="min-h-screen flex flex-col justify-start relative"
         >
+          <Header />
           <Bio />
         </section>
 
