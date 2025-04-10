@@ -1,16 +1,42 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { useTheme } from "next-themes";
 
 export default function Projects() {
-  const [isMounted, setIsMounted] = useState(false); // Track if the component is mounted
   const { resolvedTheme } = useTheme(); // Get the current theme
+  const [isMounted, setIsMounted] = useState(false); // Track if the component is mounted
+  const [visibleProjects, setVisibleProjects] = useState([]); // Track visible projects
+  const projectRefs = useRef([]); // Store refs for each project card
 
   useEffect(() => {
     setIsMounted(true); // Set mounted to true after the component is mounted
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = entry.target.dataset.index;
+            setVisibleProjects((prev) => [...new Set([...prev, index])]); // Add the visible project index
+          }
+        });
+      },
+      { threshold: 0.2 } // Trigger when 20% of the card is visible
+    );
+
+    projectRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      projectRefs.current.forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
   }, []);
 
   const projects = [
@@ -50,10 +76,16 @@ export default function Projects() {
     <section id="projects" className="mb-16">
       <h2 className="text-3xl font-bold mb-8 text-center">Projects</h2>
       <div className="flex flex-col items-center gap-12">
-        {projects.map((project) => (
+        {projects.map((project, index) => (
           <div
             key={project.id}
-            className="w-full max-w-2xl p-4 border rounded-lg shadow-2xl hover:shadow-lg transition-shadow duration-300 ease-in-out transform hover:scale-105 bg-secondary relative"
+            ref={(el) => (projectRefs.current[index] = el)} // Assign ref to each project card
+            data-index={index} // Add index as a data attribute
+            className={`w-full max-w-2xl p-4 border rounded-lg shadow-2xl hover:shadow-lg transition-shadow duration-300 ease-in-out transform hover:scale-105 bg-secondary relative ${
+              visibleProjects.includes(index.toString())
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            } transition-all duration-[1500ms]`} // Slower fade-in duration
           >
             {/* Date */}
             <div className="absolute top-4 right-4 text-sm text-gray-500">
