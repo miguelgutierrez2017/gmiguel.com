@@ -24,7 +24,11 @@ export default function Bio() {
         <h3 className="text-xl font-semibold mb-2">
           IT System Analyst &nbsp;|&nbsp;
           <a href="/Resume.pdf" target="_blank" className="text-blue-600">
-            Resume
+            Resume View
+          </a>
+          &nbsp;|&nbsp;
+          <a href="/Resume.pdf" download className="text-blue-600">
+            Download
           </a>
         </h3>
         <div className="text-center">
