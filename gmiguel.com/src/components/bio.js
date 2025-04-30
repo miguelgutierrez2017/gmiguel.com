@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Bio() {
   return (
     <section
@@ -23,13 +25,17 @@ export default function Bio() {
         </h2>
         <h3 className="text-xl font-semibold mb-2">
           IT System Analyst &nbsp;|&nbsp;
-          <a href="/Resume.pdf" target="_blank" className="text-blue-600">
-            Resume View
-          </a>
+          <Link href="/Resume.pdf">
+            <a target="_blank" className="text-blue-600">
+              View Resume
+            </a>
+          </Link>
           &nbsp;|&nbsp;
-          <a href="/Resume.pdf" download className="text-blue-600">
-            Download
-          </a>
+          <Link href="/Resume.pdf">
+            <a download className="text-blue-600">
+              Download Resume
+            </a>
+          </Link>
         </h3>
         <div className="text-center">
           <p>Bay Area IT professional</p>
