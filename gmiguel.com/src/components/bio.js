@@ -4,15 +4,10 @@ export default function Bio() {
   return (
     <section
       id="about"
-      className="mb-8 flex flex-col items-center opacity-0 animate-fade-in"
+      className="mb-8 flex flex-col items-center justify-center text-center opacity-0 animate-fade-in h-screen"
     >
-      <div className="flex flex-col items-center mt-4">
-        <img
-          src="/pfp.jpeg"
-          alt="Profile Picture"
-          className="w-60 h-60 rounded-full mb-4 shadow-2xl hover:shadow-lg transition-shadow duration-300 ease-in-out transform hover:scale-105"
-        />
-        <h2 className="text-4xl font-bold mb-4">
+      <div className="flex flex-col items-center">
+        <h2 className="text-5xl font-bold mb-4">
           Hello! I&apos;m{" "}
           <span
             style={{
@@ -23,7 +18,7 @@ export default function Bio() {
             Miguel Gutierrez
           </span>
         </h2>
-        <h3 className="text-xl font-semibold mb-2">
+        <h3 className="text-2xl font-semibold mb-2">
           IT System Analyst &nbsp;|&nbsp;
           <Link href="/Resume.pdf" target="_blank" className="text-blue-600">
             View Resume
@@ -34,7 +29,7 @@ export default function Bio() {
           </Link>
         </h3>
         <div className="text-center">
-          <p>Bay Area IT professional</p>
+          <p className="text-xl">Bay Area IT professional</p>
         </div>
       </div>
     </section>
