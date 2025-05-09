@@ -63,8 +63,16 @@ export default function Projects() {
     },
     {
       id: 3,
-      title: "Coming Soon",
+      title: "VPS",
       date: "May 2025",
+      description:
+        "Using a VPS to learn and test Docker , Kubernetes, and Pi-Holw",
+      badges: ["Pi-hole, Docker, Kubernetes"],
+    },
+    {
+      id: 4,
+      title: "Coming Soon",
+      date: "June 2025",
       description:
         "A project I am currently working on that will be revealed soon...",
       badges: [],
