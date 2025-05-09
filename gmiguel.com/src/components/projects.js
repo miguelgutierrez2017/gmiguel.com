@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 
 export default function Projects() {
   const { resolvedTheme } = useTheme(); // Get the current theme
@@ -28,12 +29,13 @@ export default function Projects() {
       { threshold: 0.2 } // Trigger when 20% of the card is visible
     );
 
-    projectRefs.current.forEach((ref) => {
+    const currentRefs = projectRefs.current;
+    currentRefs.forEach((ref) => {
       if (ref) observer.observe(ref);
     });
 
     return () => {
-      projectRefs.current.forEach((ref) => {
+      currentRefs.forEach((ref) => {
         if (ref) observer.unobserve(ref);
       });
     };
@@ -110,11 +112,14 @@ export default function Projects() {
               <Progress value={project.progress} className="mt-4" />
             )}
             {project.image && (
-              <img
-                src={project.image}
-                alt={`${project.title} Screenshot`}
-                className="rounded-b-lg shadow-md mt-4"
-              />
+              <div className="relative w-full h-48 mt-4">
+                <Image
+                  src={`/${project.image}`}
+                  alt={`${project.title} Screenshot`}
+                  fill
+                  className="rounded-b-lg shadow-md object-cover"
+                />
+              </div>
             )}
           </div>
         ))}

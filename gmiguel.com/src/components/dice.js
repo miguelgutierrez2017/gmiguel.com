@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 
 export default function Dice() {
   const { resolvedTheme } = useTheme(); // Use resolvedTheme to get the current theme
@@ -41,9 +42,11 @@ export default function Dice() {
         }`}
         onClick={rollDice}
       >
-        <img
+        <Image
           src={resolvedTheme === "dark" ? "/darkdice.svg" : "/dice.svg"}
           alt="20-sided dice"
+          width={48}
+          height={48}
           className={`w-full h-full ${
             resolvedTheme === "dark" ? "invert" : ""
           }`} // Apply invert filter for dark mode
